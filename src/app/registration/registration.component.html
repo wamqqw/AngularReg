@@ -1,22 +1,22 @@
 <div class="container">
     <h2 align = center>Registration</h2>
-    <form (ngSubmit)="OnSubmit()">
+    <form (submit)="OnSubmit()" method="get">
         <div class="group">
             <label for="username">Username:</label>
-            <input [(ngModel)]="name" type="text" id="name" placeholder="Enter your username">
+            <input [(ngModel)]="name" type="text" id="name" name="name" placeholder="Enter your username">
         </div>
         <div class="group">
             <label for="login">Login:</label>
-            <input [(ngModel)]="login" type="text" id="login" placeholder="Enter your login">
+            <input [(ngModel)]="login" type="text" id="login" name="login" placeholder="Enter your login">
         </div>
         <div class="group">
             <label for="email">Email:</label>
-            <input [(ngModel)]="email" type="email" id="email" placeholder="Enter your email">
+            <input [(ngModel)]="email" type="email" id="email" name="email" placeholder="Enter your email">
         </div>
         <div class="group">
             <label for="password">Password:</label>
-            <input [(ngModel)]="password" type="password" id="password" placeholder="Enter your password">
+            <input [(ngModel)]="password" type="password" id="password" name="password" placeholder="Enter your password">
         </div>
-        <button class="btn" (click)="addUser()" type="submit">Зарегистрироваться</button>
+        <button class="btn" type="submit">Зарегистрироваться</button>
     </form>
 </div>

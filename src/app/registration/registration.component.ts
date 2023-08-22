@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -12,15 +14,10 @@ export class RegistrationComponent {
   email!:any;
   password!:any
   
-  OnSubmit() {}
-  constructor(private httpClient:HttpClient) {}
-  addUser() {
-    const url = "https://api.nancydrew.me/addUser?key=X9ZO2Lqf&login=" + this.name + this.login + this.email + this.password +"&password=admin&name=admin&email=test@email.kz&lang=en"
-    this.httpClient.get(url).subscribe((data:any) =>{
-      this.name = data;
-      this.login = data;
-      this.email = data;
-      this.password = data;
-    }) 
-  }
-}
+  data!:string
+  constructor(
+    private httpClient:HttpClient) {}
+  OnSubmit() {
+    const url = 'https://api.nancydrew.me/addUser?key=X9ZO2Lqf&login=' + this.login + '&password=' + this.password+ '&name='+this.name+'&email='+this.email + '&lang=kk'
+    this.httpClient.get(url).subscribe((response) => this.data = JSON.stringify(response))
+}}

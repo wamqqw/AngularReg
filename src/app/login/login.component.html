@@ -1,16 +1,16 @@
 <div class = "container">
     <h2 align = center  >Authorization</h2>
-    <div class = "group">
-        <label for="login">Login</label>
-        <input type="text" id = "login" placeholder="Enter your login">
-    </div>
-    <div class = "group">
-        <label for="password">Password</label>
-        <input type="password" id = "Password" placeholder="Enter your password">
-    </div>
-    <div class = "group">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="Enter your email">
-    </div>
-    <button class = "btn">Login</button>
+    <form method="get" (ngSubmit)="onSubmit()">
+        <div class = "group">
+            <label for="login">Login</label>
+            <input [(ngModel)]="login" type="text" id = "login" name="login" placeholder="Enter your login">
+        </div>
+        <div class = "group">
+            <label for="password">Password</label>
+            <input [(ngModel)]="password" type="password" id = "Password" name="password" placeholder="Enter your password">
+        </div>
+        <button type="submit" class = "btn">Login</button>
+    </form>
+
+    <p *ngIf="this.login != null">{{this.data}}</p>
 </div>
